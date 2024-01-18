@@ -1,0 +1,11 @@
+{
+  "name": "s47_bike_info_",
+  "version": "1.0.0",
+  "description": "The overview of the website:- On this website, clicking on a company logo provides detailed information about each bike, including the manufacturer's country, top speed, weight, mileage, engine capacity, price, and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
