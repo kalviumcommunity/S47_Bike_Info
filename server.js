@@ -3,14 +3,12 @@ const app = express()
 const mongoose = require('mongoose')
 const URI = 'mongodb+srv://dhruvk:q6GkQB4Kg3jvSHFd@dhruv-bike-info.dga5pzc.mongodb.net/?retryWrites=true&w=majority'
 
-mongoose.connect(URI)
-.then(()=>{
-    app.get('/',(req,res)=>{
+app.get('/',(req,res)=>{
+    mongoose.connect(URI)
+    .then(()=>{
         res.json({Connection_Status:'Connected'})
-    })
-}).catch((err)=>{
-    app.get('/',(req,res)=>{
-        res.json({Connection_Status:'Not Connected'})
+    }).catch((err)=>{
+        res.json({Connection_Status:"Not Connected"})
     })
 })
 
