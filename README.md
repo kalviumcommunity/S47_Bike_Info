@@ -7,4 +7,4 @@ Detailed Explanation of the website:-
 On first page there is a images of different logo of companies who manufacture bikes. when we click on that logo it rerender on another page on which information of different bike of that company is present such as image, manufacturer's country, top speed, weight, mileage, engine capacity, price, and more.
 
 
-
+Deployed Link:- https://65ba0cb69611e3aa7a10b46d--sprightly-cuchufli-bf1445.netlify.app/
