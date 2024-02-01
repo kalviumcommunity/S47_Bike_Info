@@ -1,9 +1,30 @@
-h1{
-  text-align: center;
-  margin: 40vh auto;
-  font-size: 8vh;
-  color: white;
-}
-body{
+*{
+  margin: 0;
+  padding: 0;
   background-color: black;
+}
+.nav{
+  width: 100vw;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 2vh;
+  border: 1px dotted white;
+}
+
+.box{
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  width: max-content;
+  margin: 4vh auto;
+  display: flex;
+  justify-content: space-around;
+}
+.value{
+  font-size: 3vh;
+  font-weight: 10;
+  justify-content: center;
+  margin: auto 2vw;
+  
 }
