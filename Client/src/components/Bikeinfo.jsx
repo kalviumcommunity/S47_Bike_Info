@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
+import { Link } from 'react-router-dom'
 const Bikeinfo = () => {
     // const Data = props.Data
     const [Data,setData] = useState([])
@@ -11,6 +12,10 @@ const Bikeinfo = () => {
     })
   return (
     <div className='body'>
+      <div className='nav'>
+        <h1 className='title'>BIKE-INFO</h1>
+      </div>
+      <h1 className='insert'>For Insert more Data <Link to='/InsertData' state={{color:'blue'}}>Click Here!</Link></h1>
       {Data.map((Data,index)=>{
         return(
         <div key={index} className='box'>
@@ -20,9 +25,7 @@ const Bikeinfo = () => {
             <h3>Model: {Data.model}</h3>
             <p>Price: {Data.price}</p>
             <p>Mileage: {Data.mileage}</p>
-            <p>Engine: {Data.engine}</p>
-            <p>Fuel capacity: {Data.fuel_capacity}</p>
-            <p>Weight: {Data.weight}</p>
+           
           </div>
         </div>
         )

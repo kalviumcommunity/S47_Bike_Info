@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: black
 }
 .nav{
   width: 100vw;
@@ -30,4 +30,8 @@
 }
 .image{
   width: 30vw;
+}
+.insert{
+  color:white;
+  text-align: center;
 }

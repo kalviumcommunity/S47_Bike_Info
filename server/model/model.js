@@ -6,9 +6,6 @@ const DataSchema = new mongoose.Schema({
     model : String,
     price : String,
     mileage : String,
-    engine : String,
-    fuel_capacity : String,
-    weight : String,
     img: String
 })
 

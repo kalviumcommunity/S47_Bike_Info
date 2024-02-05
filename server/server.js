@@ -17,9 +17,13 @@ app.get('/DataBase',(req,res)=>{
     DataModel.find()
     .then(data=>res.json(data))
     .catch((err)=>res.json(err))
-
 })
 
+app.post('/InsertData',(req,res)=>{
+    DataModel.create(req.body)
+    .then(data=>res.json(data))
+    .catch((err)=>res.json(err))
+})
 
 app.get('/ping',(req,res)=>{
     res.json({message:'Pong'})
