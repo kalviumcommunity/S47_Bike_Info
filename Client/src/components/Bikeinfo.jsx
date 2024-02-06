@@ -11,19 +11,19 @@ const Bikeinfo = () => {
       .then(data=>data.json())
       .then(res =>{
         setData(res)
-        // console.log(res)
+        console.log(res)
       })
     },[])
 
     const HandelDelete=(id)=>{
-      // console.log("Delete button clicked",id);
+      console.log("Delete button clicked",id);
       axios.delete(`http://localhost:4000/DeleteData/${id}`)
       .then(res=>{
         console.log(res)
         window.location.reload(true)
       }).catch(err=>console.log(err))
     }
-
+    
   return (
     <div className='body'>
       <div className='nav'>
