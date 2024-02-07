@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const DataSchema = new mongoose.Schema({
-    id: Number,
+    // _id : String,
     company : String,
     model : String,
     price : String,

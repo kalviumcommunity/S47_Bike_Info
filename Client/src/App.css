@@ -1,7 +1,8 @@
 *{
   margin: 0;
   padding: 0;
-  background-color: black
+  background-color: black;
+  overflow-x: hidden;
 }
 .nav{
   width: 100vw;
@@ -34,4 +35,9 @@
 .insert{
   color:white;
   text-align: center;
+}
+.btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

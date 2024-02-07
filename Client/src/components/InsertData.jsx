@@ -22,6 +22,7 @@ const InsertData = () => {
 
   return (
     <div className={styles.body}>
+        <h1 className={styles.heading}>Insert Data</h1>
         <form className={styles.form} onSubmit={Submit}>
           <label htmlFor="company">Company: </label>
           <input type="text" id='company' name='company' onChange={(e)=>setCompany(e.target.value)}/>
@@ -33,7 +34,7 @@ const InsertData = () => {
           <input type="text" id='price' name='price' onChange={(e)=>setPrice(e.target.value)}/>
           <br />
           <label htmlFor="mileage">Mileage: </label>
-          <input type="text" id='mileage' name='mileage' onClick={(e)=>setMileage(e.target.value)}/>
+          <input type="text" id='mileage' name='mileage' onChange={(e)=>setMileage(e.target.value)}/>
           <br />
           <label htmlFor="img">Image URL: </label>
           <input type="text" id='img' name='img' onChange={(e)=>setImage(e.target.value)} />
