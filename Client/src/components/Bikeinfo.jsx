@@ -1,17 +1,21 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate} from 'react-router-dom'
 import axios from 'axios'
 const Bikeinfo = () => {
     // const Data = props.Data
     const [Data,setData] = useState([])
-    
+    const name = (decodeURIComponent(document.cookie).split("; "))
+    // const cook = document.cookie
+    const navigate = useNavigate()
     useEffect(()=>{
       fetch('http://localhost:4000/DataBase')
       .then(data=>data.json())
       .then(res =>{
         setData(res)
         console.log(res)
+        console.log(name)
+        // console.log(cook)
       })
     },[])
 
@@ -24,10 +28,25 @@ const Bikeinfo = () => {
       }).catch(err=>console.log(err))
     }
     
+    const Logout=()=>{
+      document.cookie = "Name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "Email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "User_Name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      navigate('/')
+      window.location.reload(true)
+    }
   return (
     <div className='body'>
       <div className='nav'>
+        <div>
+          {name.map((data,index)=>{
+          return(
+            <h3 key={index}>{data}</h3>
+            )
+          })}
+        </div>
         <h1 className='title'>BIKE-INFO</h1>
+        <button onClick={Logout}>Logout</button>
       </div>
       <h1 className='insert'>For Insert more Data <Link to='/InsertData' state={{color:'blue'}}>Click Here!</Link></h1>
       {Data && Data.map((Data,index)=>{
