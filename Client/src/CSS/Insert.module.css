@@ -26,3 +26,6 @@ button{
 .heading{
     color : white;
 }
+.err{
+    color: red;
+}

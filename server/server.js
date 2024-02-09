@@ -1,15 +1,16 @@
 const express = require('express')
 const route = require('./route')
+const {ValidData} = require('./model/validation')
 const app = express()
 const mongoose = require('mongoose')
 const DataModel = require('./model/model')
 const cors = require('cors')
-
+require('dotenv').config()
 app.use(cors())
 app.use('/',route)
 app.use(express.json())
 
-const URI = 'mongodb+srv://dhruvk:q6GkQB4Kg3jvSHFd@dhruv-bike-info.dga5pzc.mongodb.net/?retryWrites=true&w=majority'
+const URI = process.env.Mongo_URI
 
 mongoose.connect(URI)
 
@@ -20,6 +21,10 @@ app.get('/DataBase',(req,res)=>{
 })
 
 app.post('/InsertData',(req,res)=>{
+    const {company,model,price,mileage,img} = req.body
+    const {error} = ValidData(req.body)
+    if(error) return res.json({message:error.message})
+
     DataModel.create(req.body)
     .then(data=>res.json(data))
     .catch((err)=>res.json(err))
