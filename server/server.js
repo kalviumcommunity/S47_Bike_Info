@@ -65,12 +65,10 @@ app.get('/ping',(req,res)=>{
 }) 
 
 app.post('/login',(req,res)=>{
-    // const {name,useName,email}=req.body;
     const secret = "Dhruv"
     const token = jwt.sign({data:req.body},secret)
     // console.log(token)
     res.send(token)
-
 })
 app.listen(4000,()=>{
     console.log('Server is working on 4000')

@@ -12,6 +12,14 @@
   border: 1px dotted white;
   display: flex;
 }
+.dropdown{
+  color: white;
+  margin: 1vh 2vw;
+  font-size: 4vh;
+  padding: 1vh;
+  border-radius: 2vh;
+  box-shadow: 1px 1px 5px white;
+}
 
 .box{
   border: 1px solid white;
