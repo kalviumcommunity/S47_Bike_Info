@@ -8,7 +8,7 @@ const Schema = Joi.object({
     model : Joi.string().required(),
     price : Joi.string().required(),
     mileage : Joi.string().required(),
-    img: Joi.string().url().required()
+    img: Joi.string().uri().required()
 })
 
 exports.ValidData = Validator(Schema)

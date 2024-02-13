@@ -20,7 +20,7 @@ const InsertData = () => {
       if(res.data.message){
         setError("Please Enter Valid URL")
       }else{
-        Navigate('/')
+        Navigate('/Data')
       }
     }).catch(err=>{
       console.log(err)
@@ -49,7 +49,7 @@ const InsertData = () => {
           {error && <p className={styles.err}>{error}</p>}
           <br />
           <button type='submit'>Submit</button>
-          <Link to='/'>
+          <Link to='/Data'>
             <button>Cancel</button>
           </Link>
         </form>

@@ -31,7 +31,7 @@ const UpdateData = () => {
         axios.put(`http://localhost:4000/UpdateData/${id}`,{company,model,price,mileage,img})
         .then(res=>{
             console.log(res)
-            Navigate('/')
+            Navigate('/Data')
         }).catch(err=>console.log(err))
     }
 
@@ -56,7 +56,7 @@ const UpdateData = () => {
           <br />
           <br />
           <button >Update</button>
-          <Link to='/'>
+          <Link to='/Data'>
             <button>Cancel</button>
           </Link>
         </form>
