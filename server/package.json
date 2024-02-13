@@ -4,7 +4,8 @@
   "description": "The overview of the website:- On this website, clicking on a company logo provides detailed information about each bike, including the manufacturer's country, top speed, weight, mileage, engine capacity, price, and more.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +14,8 @@
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "joi": "^17.12.1",
-    "mongoose": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1",
     "nodemon": "^3.0.3"
   }
 }

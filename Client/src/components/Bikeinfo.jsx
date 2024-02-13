@@ -32,21 +32,15 @@ const Bikeinfo = () => {
       document.cookie = "Name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "Email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "User_Name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "Token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       navigate('/')
       window.location.reload(true)
     }
   return (
     <div className='body'>
       <div className='nav'>
-        <div>
-          {name.map((data,index)=>{
-          return(
-            <h3 key={index}>{data}</h3>
-            )
-          })}
-        </div>
         <h1 className='title'>BIKE-INFO</h1>
-        <button onClick={Logout}>Logout</button>
+        <button onClick={Logout} className='logout'>Logout</button>
       </div>
       <h1 className='insert'>For Insert more Data <Link to='/InsertData' state={{color:'blue'}}>Click Here!</Link></h1>
       {Data && Data.map((Data,index)=>{
