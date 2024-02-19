@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react'
 import { Link,useNavigate} from 'react-router-dom'
 import axios from 'axios'
 const Bikeinfo = () => {
-    // const Data = props.Data
+    const [sort,setSort] = useState('All')
     const [Data,setData] = useState([])
     const name = (decodeURIComponent(document.cookie).split("; "))
     // const cook = document.cookie
@@ -27,7 +27,10 @@ const Bikeinfo = () => {
         window.location.reload(true)
       }).catch(err=>console.log(err))
     }
-    
+    const handleSort=(e)=>{
+      setSort(e.target.value)
+    }
+    const SortedData = (sort == "All")? Data : Data.filter(item => item.company == sort)
     const Logout=()=>{
       document.cookie = "Name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "Email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -43,7 +46,14 @@ const Bikeinfo = () => {
         <button onClick={Logout} className='logout'>Logout</button>
       </div>
       <h1 className='insert'>For Insert more Data <Link to='/InsertData' state={{color:'blue'}}>Click Here!</Link></h1>
-      {Data && Data.map((Data,index)=>{
+      <select className='dropdown' onChange={handleSort}>
+        <option value="All">All</option>
+        <option value="Royal Enfiled">RE</option>
+        <option value="Honda">Honda</option>
+        <option value="Bajaj">Bajaj</option>
+
+      </select>
+      {SortedData && SortedData.map((Data,index)=>{
         return(
         <div key={index} className='box'>
           <img src={Data.img} alt="image" className='image'/>

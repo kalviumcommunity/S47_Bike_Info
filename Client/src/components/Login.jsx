@@ -15,7 +15,7 @@ const Login = () => {
     console.log("swdefv");
     axios.post('http://localhost:4000/login')
     .then(res=>{
-      // document.cookie=`Token=${res.data}; expires=Thu, 01 Jan 9999 00:00:00 UTC; path=/;`;
+      document.cookie=`Token=${res.data}; expires=Thu, 01 Jan 9999 00:00:00 UTC; path=/;`;
       console.log(res.data)
       navigate('/Data') 
     }).catch(err=>console.log(err))
